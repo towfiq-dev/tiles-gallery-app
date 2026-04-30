@@ -3,11 +3,31 @@ import ActiveNav from './ActiveNav';
 import Image from 'next/image';
 import NavLogo from '../../../assets/asset/user.png'
 import LOGO from '../../../assets/asset/image.png'
+import { authClient } from '@/lib/auth-client';
+import { toast } from 'react-toastify';
 import Link from 'next/link';
+import React, { useState } from 'react';
 
 import { Home, Grid, MessageSquare, LayoutDashboard, User, Settings, LogOut, Menu, X } from 'lucide-react';
-
+import { useRouter } from 'next/navigation';
 const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isProfileOpen, setIsProfileOpen] = useState(false);
+    
+    const { data: session, isPending } = authClient.useSession();
+    const user = session?.user;
+    const router = useRouter()
+    const handleSignOut = async () => {
+        await authClient.signOut({
+            //callbackURL: "/auth/signin",
+            fetchOptions: {
+                onSuccess: () => {
+                    toast.success('Logged Out Successfully');
+                    router.push('/auth/signin')
+                }
+            }
+        });
+    };
     const links = (
         <>
             <ActiveNav href={'/'} icon={Home}>Home</ActiveNav>
@@ -16,6 +36,14 @@ const Navbar = () => {
             <ActiveNav href={'/allNavs/dashboard'} icon={LayoutDashboard}>Dashboard</ActiveNav>
         </>
     );
+
+    if (isPending) {
+        return (
+            <div className="h-16 flex items-center justify-center bg-white/80 backdrop-blur-md shadow-sm border-b mt-4 rounded-xl mx-4">
+                <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-blue-600"></div>
+            </div>
+        );
+    }
 
 
     return (

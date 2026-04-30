@@ -1,10 +1,44 @@
 'use client'
 import Link from 'next/link';
+import React, { useState } from 'react';
+import { authClient } from '@/lib/auth-client';
+import { toast } from 'react-toastify';
+import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { GrGoogle } from 'react-icons/gr';
 
 const SignUpPage = () => {
+        const handleGoogleSignUp= async()=>{
+    const data = await authClient.signIn.social({
+        provider: "google",
+        })
+    //     if (data) {
+    // toast.success('Congratulations! You have successfully signed up.')
+    // }else{
+    // toast.error("Something went wrong. Please try again.")
+    // }
+
+    }
+    const [showPassword, setShowPassword] = useState(false);
+    const router = useRouter()
+    const {register, handleSubmit, formState: { errors },} = useForm()
+    const onSubmit = async(data)=>{
+    const {email, name, photo, password } = data
+    const {data: res, error} = await authClient.signUp.email({
+        name: name,
+        image: photo,
+        email: email,
+        password: password
+    })
+    if (res) {
+    toast.success(`Congratulations ${name}! You have successfully signed up.`);
+    router.push('/')
+  }else if (error) {
+    toast.error(error.message || "Something went wrong. Please try again.");
+  }
     
+    }
 return (
         <div className="min-h-screen bg-[#F3F3F3] flex justify-center items-center p-4">
             <div className="bg-white w-full max-w-[600px] p-8 md:p-14 rounded-lg shadow-sm">

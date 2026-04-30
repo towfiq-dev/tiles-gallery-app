@@ -5,7 +5,6 @@ import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import Footer from "@/components/shared/footer/Footer";
 import Navbar from "@/components/shared/navbar/Navbar";
-//import Banner from "@/components/shared/banner/Banner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +30,6 @@ export default function RootLayout({ children }) {
       <body>
       <Navbar/>
       <main className='max-w-300 mx-auto'>
-        {/* <Banner/> */}
         {children}
         <ToastContainer position="top-center"/>
       </main>

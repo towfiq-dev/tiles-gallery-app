@@ -10,6 +10,7 @@ import React, { useState } from 'react';
 
 import { Home, Grid, MessageSquare, LayoutDashboard, User, Settings, LogOut, Menu, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { IoBagAdd } from 'react-icons/io5';
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -33,6 +34,7 @@ const Navbar = () => {
             <ActiveNav href={'/'} icon={Home}>Home</ActiveNav>
             <ActiveNav href={'/allNavs/allTiles'} icon={Grid}>All Tiles</ActiveNav>
             <ActiveNav href={'/allNavs/contact'} icon={MessageSquare}>Contact</ActiveNav>
+            <ActiveNav href={'/allNavs/pricing'} icon={IoBagAdd}>Pricing</ActiveNav>
             <ActiveNav href={'/allNavs/dashboard'} icon={LayoutDashboard}>Dashboard</ActiveNav>
         </>
     );
@@ -81,7 +83,7 @@ const Navbar = () => {
                         <div className="relative">
                             <button 
                                 onClick={() => setIsProfileOpen(!isProfileOpen)}
-                                className="flex items-center gap-2 p-1 pr-3 rounded-full hover:bg-gray-50 transition-all border border-transparent hover:border-gray-200"
+                                className="flex cursor-pointer items-center gap-2 p-1 pr-3 rounded-full hover:bg-gray-50 transition-all border border-transparent hover:border-gray-200"
                             >
                                 <div className="w-9 h-9 rounded-full ring-2 ring-blue-500/20 overflow-hidden bg-gray-100">
                                     <Image 

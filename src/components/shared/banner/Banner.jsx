@@ -49,10 +49,8 @@ const Banner = () => {
                     Explore our premium collection of exquisite tiles designed to transform your spaces. 
                     From classic ceramics to modern geometric patterns, find the inspiration you need.
                   </p>
-                  <Link href={'/allNavs/allTiles'}>
-                    <button className="btn btn-primary btn-lg px-10 rounded-full hover:scale-105 transition-transform">
+                  <Link href={'/allNavs/allTiles'} className="btn btn-primary btn-md px-7 rounded-full hover:scale-105 transition-transform">
                       Browse Now
-                    </button>
                   </Link>
                 </div>
               </div>

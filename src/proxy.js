@@ -17,5 +17,5 @@ export async function proxy(request) {
 }
 
 export const config = {
-  matcher: ["/allNavs/profile", "/allNavs/dashboard", "/allNavs/allTiles/:path"],
+  matcher: ["/allNavs/profile", "/allNavs/pricing", "/allNavs/dashboard", "/allNavs/allTiles/:path"],
 };

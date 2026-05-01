@@ -1,3 +1,4 @@
+import DetailsButton from '@/components/homepage/detailsButton/DetailsButton';
 import Image from 'next/image';
 import React from 'react';
 
@@ -88,13 +89,8 @@ const DetailsPage = async ({ params }) => {
             </div>
 
        {/* Action Button */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold py-4 rounded-2xl transition-all transform hover:scale-[1.02] active:scale-95 shadow-xl shadow-blue-200 dark:shadow-none" onClick={handleAddToCard}>
-                Add to Cart
-              </button>
-              <button className="flex-1 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white text-lg font-bold py-4 rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-600 transition-all">
-                Add to Wishlist
-              </button>
+            <div>
+         <DetailsButton/>
             </div>
 
           </div>

@@ -10,7 +10,6 @@ import React, { useState } from 'react';
 
 import { Home, Grid, MessageSquare, LayoutDashboard, User, Settings, LogOut, Menu, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { IoBagAdd } from 'react-icons/io5';
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -34,7 +33,6 @@ const Navbar = () => {
             <ActiveNav href={'/'} icon={Home}>Home</ActiveNav>
             <ActiveNav href={'/allNavs/allTiles'} icon={Grid}>All Tiles</ActiveNav>
             <ActiveNav href={'/allNavs/contact'} icon={MessageSquare}>Contact</ActiveNav>
-            <ActiveNav href={'/allNavs/pricing'} icon={IoBagAdd}>Pricing</ActiveNav>
             <ActiveNav href={'/allNavs/dashboard'} icon={LayoutDashboard}>Dashboard</ActiveNav>
         </>
     );

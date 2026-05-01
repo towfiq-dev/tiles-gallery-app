@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏢 TilesPro - Online Ceramic Product Gallery
 
-## Getting Started
+* **TilesPro** is a modern, next-generation web application built to showcase a premium collection of tiles. It provides a seamless experience for users to explore various tile categories, view detailed specifications, and manage their personal profiles.
 
-First, run the development server:
+## 📖 Project Theme & Purpose
+The core objective of this project is to provide an aesthetic and high-performance gallery platform for Tiles Industries Ltd. The application focuses on clean UI/UX, allowing users to browse classic ceramics to modern geometric patterns while ensuring secure data management through integrated authentication.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Key Features
+* **Responsive Design:** Fully optimized for a seamless experience across Mobile, Tablet, and Desktop devices.
+* **Secure Authentication:** Implemented using **BetterAuth** with MongoDB Adapter, supporting both Email/Password and Google Social Login.
+* **Dynamic Banner & Marquee:** Features a hero banner with a "Browse Now" call-to-action and a scrolling marquee for new arrivals and weekly features.
+* **Featured Collection:** Automatically displays the top 4 featured tiles fetched dynamically from the server.
+* **Search Functionality:** A powerful search bar on the 'All Tiles' page allows users to filter products by title.
+* **User Profile Management:** Logged-in users can view their profile and update their name and profile image URL.
+* **Detailed Product View:** High-resolution previews for each tile accompanied by technical specs like dimensions, material, and stock status.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technologies Used
+* **Frontend Framework:** Next.js (App Router)
+* **Authentication:** BetterAuth (MongoDB Adapter)
+* **Styling:** Tailwind CSS & DaisyUi
+* **Database:** MongoDB
+* **Deployment:** Vercel
+* **Libraries:** 
+    * `Lucide React` (for modern iconography)
+    * `React Toast` (for interactive notifications)
+    * `Swiper` (for smooth UI transitions)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📂 Functionality Overview
+* **Public Routes:** Home, All Tiles, Login, and Register pages are accessible to all guests.
+* **Private Routes:** Access to specific Tile Details and the My Profile page requires mandatory authentication.
+* **Data Handling:** Data is managed in JSON format and fetched from the server with integrated loading states for better UX.
+* **Security:** Sensitive configurations and API keys are protected using Environment Variables.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 👨‍💻 Developed By
 
-To learn more about Next.js, take a look at the following resources:
+<table style="width: 100%; border: none;">
+  <tr>
+    <td>
+      <strong>Towfiqul Islam</strong><br>
+      Full Stack & MERN Stack Web Developer
+    </td>
+  </tr>
+</table>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🔗
+* **Live link:** [Visit](https://tiles-gallery-app.vercel.app)
+* **GitHub:** [towfiq-dev](https://github.com/towfiq-dev)
+* **LinkedIn:** [towfiqul-islam1](https://www.linkedin.com/in/towfiqul-islam1)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---

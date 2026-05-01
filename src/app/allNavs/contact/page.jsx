@@ -131,7 +131,7 @@ const ContactPage = () => {
       <div className="max-w-7xl mx-auto mt-16 rounded-2xl overflow-hidden shadow-lg h-96 bg-base-200 border border-base-300 relative group">
         <div className="w-full h-full flex flex-col items-center justify-center text-gray-500 bg-grid-pattern">
             <MapPin className="w-12 h-12 mb-2 text-primary opacity-50 group-hover:animate-bounce" />
-            <p className="text-lg font-medium">Raipura, Narsingdi</p>
+            <p className="text-lg font-medium">Dhaka, Bangladesh</p>
             <p className="text-sm italic">Google Maps Integration Ready</p>
         </div>
       </div>

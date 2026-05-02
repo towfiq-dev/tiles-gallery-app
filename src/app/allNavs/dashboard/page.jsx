@@ -21,16 +21,16 @@ const ProfilePage = () => {
       <h1 className="text-2xl font-bold mb-4">Profile Page</h1>
       
       <div className="flex flex-col items-center gap-4 bg-gray-50 p-8 rounded-2xl w-fit">
-        <div >
-          <Image 
-            width={128}
-            height={158}
-            src={user?.image || defaultUser}
-            referrerPolicy='no-referrer'
-            alt={user?.name || 'User Profile'}
-            className="rounded-full"
-          />
-        </div>
+        <div className="w-32 h-32 rounded-full overflow-hidden">
+  <Image 
+    width={128}
+    height={128}
+    src={user?.image || defaultUser}
+    referrerPolicy='no-referrer'
+    alt={user?.name || 'User Profile'}
+    className="rounded-full object-cover w-full h-full"
+  />
+</div>
 
         <div className="text-center">
           <h2 className="text-xl font-semibold text-gray-800">{user?.name}</h2>

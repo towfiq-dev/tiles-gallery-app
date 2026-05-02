@@ -13,7 +13,7 @@ import { useRouter } from 'next/navigation';
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
-    
+
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
     const router = useRouter()
@@ -49,20 +49,20 @@ const Navbar = () => {
     return (
         <nav className="bg-white/90 backdrop-blur-md shadow-sm rounded-2xl px-4 md:px-6 mt-4 sticky top-4 z-50 border border-gray-200/50 mx-4 transition-all duration-300">
             <div className="flex justify-between items-center h-16">
-                
+
                 <div className="flex items-center gap-4">
-                    <button 
+                    <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         className="lg:hidden p-2 rounded-xl bg-gray-50 text-gray-600 hover:bg-gray-100 transition-colors"
                     >
                         {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
                     </button>
-                    
+
                     <Link href="/" className="flex items-center gap-2 group">
                         <div className="text-xl font-bold tracking-tighter text-blue-600">
-                    <Image src={LOGO} className='w-16 h-16 rounded-full' alt='Logo'/>
-                        {/* TILES<span className="text-gray-800"> GALLERY</span> */}
-                    </div>
+                            <Image src={LOGO} className='w-16 h-16 rounded-full' alt='Logo' />
+                            {/* TILES<span className="text-gray-800"> GALLERY</span> */}
+                        </div>
                         <span className="hidden sm:block text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent italic">
                             TILES<span className="text-gray-800 not-italic font-black">PRO</span>
                         </span>
@@ -79,18 +79,19 @@ const Navbar = () => {
                 <div className="flex items-center gap-3">
                     {user ? (
                         <div className="relative">
-                            <button 
+                            <button
                                 onClick={() => setIsProfileOpen(!isProfileOpen)}
                                 className="flex cursor-pointer items-center gap-2 p-1 pr-3 rounded-full hover:bg-gray-50 transition-all border border-transparent hover:border-gray-200"
                             >
-                                <div className="w-9 h-9 rounded-full ring-2 ring-blue-500/20 overflow-hidden bg-gray-100">
-                                    <Image 
-                                        width={36} 
-                                        height={36} 
+                                <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                                    <Image
+                                        width={64}
+                                        height={64}
+                                        className="w-full h-full object-cover"
+                                        alt='Logo'
                                         src={user.image || NavLogo}
                                         referrerPolicy='no-referrer'
-                                        alt="User" 
-                                        className="object-cover"
+
                                     />
                                 </div>
                                 <span className="hidden md:block text-sm font-semibold text-gray-700">{user.name?.split(' ')[0]}</span>
@@ -112,7 +113,7 @@ const Navbar = () => {
                                             <Settings size={16} /> Settings
                                         </Link>
                                         <div className="h-px bg-gray-100 my-1 mx-4"></div>
-                                        <button 
+                                        <button
                                             onClick={handleSignOut}
                                             className="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-red-500 cursor-pointer font-bold hover:bg-red-50 transition-colors"
                                         >

@@ -16,7 +16,9 @@ const Navbar = () => {
 
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
+    
     const router = useRouter()
+ 
     const handleSignOut = async () => {
         await authClient.signOut({
             //callbackURL: "/auth/signin",
@@ -77,7 +79,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="flex items-center gap-3">
-                    {user ? (
+                    {session && user ? (
                         <div className="relative">
                             <button
                                 onClick={() => setIsProfileOpen(!isProfileOpen)}

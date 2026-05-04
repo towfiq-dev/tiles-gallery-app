@@ -32,6 +32,7 @@ const SignUpPage = () => {
         password: password
     })
     if (res) {
+    await authClient.signOut();
     toast.success(`Congratulations ${name}! You have successfully signed up.`);
     router.push('/auth/signin')
   }else if (error) {

@@ -33,7 +33,7 @@ const SignUpPage = () => {
     })
     if (res) {
     toast.success(`Congratulations ${name}! You have successfully signed up.`);
-    router.push('/')
+    router.push('/auth/signin')
   }else if (error) {
     toast.error(error.message || "Something went wrong. Please try again.");
   }

@@ -30,8 +30,9 @@ const SignInPage = () => {
             password: password
         })
         if (res) {
-        toast.success(`Congratulations! You have successfully signed in.`);
+        toast.success('Congratulations! You have successfully signed in.');
         router.push('/')
+        router.refresh();
       }else if (error) {
         toast.error(error.message || "Something went wrong. Please try again.");
       }
